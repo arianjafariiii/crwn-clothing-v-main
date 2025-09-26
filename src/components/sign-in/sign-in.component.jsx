@@ -36,7 +36,15 @@ const SignIn = () => {
             console.log(response);
             resetFields();
         }catch(error) {
-            
+            switch(error.code){
+                case 'auth/invalid-credential':
+                    alert("password does not match email.");
+                    break;
+                
+                default:
+                    console.log(error);
+                
+            }
         }
         
         
@@ -71,7 +79,7 @@ const SignIn = () => {
                 />
                 <div className="buttons-container">
                     <Button   type="submit">SIGN IN</Button>
-                    <Button  buttonType={"google"} onClick={popupSignIn}>Google Sign In</Button>
+                    <Button type="button" buttonType={"google"} onClick={popupSignIn}>Google Sign In</Button>
                 </div>
 
             </form>
