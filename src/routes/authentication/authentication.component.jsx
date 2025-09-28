@@ -2,18 +2,10 @@ import { useEffect } from "react";
 import SignUp from "../../components/sign-up/sign-up.component";
 import SignIn from "../../components/sign-in/sign-in.component";
 import './authentication.styles.scss';
-
-
-import {
-    signInWithGooglePopup,
-    createUserDocumentFromAuth,
-    signInWithGoogleRedirect,
-    auth
-} from "../../utils/firebase/firebase.utils";
-import { getRedirectResult } from "firebase/auth";
+import { UserContext } from "../../context/user-context/user-context";
+import {useContext} from "react";
 
 const Authentication = () => {
-
     
     
     return(
