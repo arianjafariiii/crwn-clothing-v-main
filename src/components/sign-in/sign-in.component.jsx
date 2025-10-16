@@ -3,7 +3,9 @@ import { createUserDocumentFromAuth, signInWithGooglePopup, signInUserWithEmailA
 import './sign-in.styles.scss';
 import InputField from "../input-field/input-field.components";
 import Button from "../button/Button.component";
-
+import { useDispatch } from "react-redux";
+import { googleSignInsaga, signInEmailStart } from "../../store/user/user.saga";
+import { emailSignInStart, googleSignInStart } from "../../store/user/user.action";
 
 const defaultFields = {
     email: '',
@@ -14,12 +16,12 @@ const defaultFields = {
 
 
 const SignIn = () => {
+    const dispatch = useDispatch();
     const [formFields, setFormFields] = useState(defaultFields);
     const { email, password} = formFields;
     
     const popupSignIn = async() => {
-        const {user} =  await signInWithGooglePopup();
-        await createUserDocumentFromAuth(user); 
+        dispatch (googleSignInStart());
     };
 
     const resetFields = () => {
@@ -32,7 +34,7 @@ const SignIn = () => {
         event.preventDefault();
 
         try{
-            const {user} = await signInUserWithEmailAndPassword(email, password);
+            dispatch(emailSignInStart(email, password));
             resetFields();
         }catch(error) {
             switch(error.code){

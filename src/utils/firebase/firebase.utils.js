@@ -102,11 +102,9 @@ const firebaseConfig = {
             });
         }catch(error){
             console.log("Have some errors");
-        }
-
-
-        return userDocRef;
+        }   
     }
+    return userSnapshot;
   }
 export const createUserAuthWithEmailAndPassword = async(email, password) => {
     if(!email || !password) return;
@@ -121,4 +119,21 @@ export const signInUserWithEmailAndPassword = async(email, password) => {
 export const signOutUserAuth = async() =>  signOut(auth);
 
 export const onAuthStateChangedListener = ( callback) => onAuthStateChanged(auth, callback);
+
+
+
+
+
+export const getCurrentUser = () => {
+  return new Promise ((resolve, reject) => {
+    const unsubscribe = onAuthStateChanged(
+      auth,
+      (userAuth) => {
+        unsubscribe();
+        resolve(userAuth);
+      },
+      reject
+    )
+  })
+}
   

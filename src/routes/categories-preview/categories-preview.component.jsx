@@ -13,10 +13,7 @@ const CategoriesPreview = () => {
                 <CategoryPreview key={title} title={title} items={categories[title]} />
             ))}
             
-        </Fragment>
-        
-        
-        
+        </Fragment>    
     )
 }
 
