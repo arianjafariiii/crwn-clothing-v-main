@@ -9,6 +9,7 @@ nav {
     top: 0;
     left: 0;
     z-index: 10;
+    transition: 0.5s;
 }
 
 .logo {
@@ -20,4 +21,9 @@ nav ul li {
     margin: 5px 20px;
     font-size: 16px;
     list-style: none; 
+}
+
+.dark-nav {
+    background-color: #212ae0;
+    transition: 0.5s;
 }
