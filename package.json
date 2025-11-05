@@ -1,7 +1,14 @@
 {
-  "name": "crown-clothing-v2",
-  "version": "0.1.0",
+  "name": "edusity",
   "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint .",
+    "preview": "vite preview"
+  },
   "dependencies": {
     "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^6.8.0",
@@ -11,15 +18,7 @@
     "firebase": "^12.3.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
-    "react-router-dom": "6",
-    "react-scripts": "5.0.1",
-    "redux-persist": "^6.0.0",
-    "redux-saga": "^1.3.0",
-    "redux-thunk": "^3.1.0",
-    "reselect": "^5.1.1",
-    "scss": "^0.2.4",
-    "styled-components": "^6.1.19",
-    "web-vitals": "^2.1.4"
+    "react-scroll": "^1.9.3"
   },
   "scripts": {
     "start": "react-scripts start",
