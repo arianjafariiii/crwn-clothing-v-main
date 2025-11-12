@@ -1,6 +1,6 @@
 import {all, call} from "redux-saga/effects";
-import { categoriesSaga } from "./categories/categories.saga";
-import { userSaga } from "./user/user.saga";
+import { categoriesSaga } from "./categories/categories.saga.js";
+import { userSaga } from "./user/user.saga.js";
 
 
 export function* rootSaga() {

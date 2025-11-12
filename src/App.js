@@ -1,18 +1,14 @@
 import './App.css';
-import CategoryItem from './components/directory-item/directory-item.components';
-import CategoriesContainer from './components/categories-container/categories-container.component';
 import {Route, Routes} from 'react-router-dom';
-import { Outlet } from 'react-router-dom';
-import Home from './routes/home/home.component';
-import Navbar from './routes/navbar/navbar.component';
-import Authentication from './routes/authentication/authentication.component';
-import Checkout from './routes/checkout/checkout.componrnt';
+import Home from './routes/home/home.component.jsx';
+import Navbar from './routes/navbar/navbar.component.jsx';
+import Authentication from './routes/authentication/authentication.component.jsx';
+import Checkout from './routes/checkout/checkout.componrnt.jsx';
 import { useEffect } from 'react';
-import { createUserDocumentFromAuth, getCurrentUser, onAuthStateChangedListener, signOutUserAuth } from "./utils/firebase/firebase.utils";
 import { checkUserSession, setCurrentUser } from './store/user/user.action';
 import { useDispatch } from 'react-redux';
 
-import Shop from './routes/shop/shop.component';
+import Shop from './routes/shop/shop.component.jsx';
 
 
 
