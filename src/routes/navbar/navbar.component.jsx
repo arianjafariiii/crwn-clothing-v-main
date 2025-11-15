@@ -7,7 +7,7 @@ import CartDropdown from "../../components/cart-dropdown/cart-dropdown.component
 import { useDispatch, useSelector } from "react-redux";
 import { selectCurrentUser } from "../../store/user/user.selector";
 import { selectIsCartOpen } from "../../store/cart/cart.selector";
-import { signoutStart } from "../../store/user/user.action";
+import { signOutStart } from "../../store/user/user.action";
 
 
 const Navbar = () => {
@@ -15,7 +15,7 @@ const Navbar = () => {
     const currentUser = useSelector(selectCurrentUser);
     const isCartOpen = useSelector(selectIsCartOpen);
     
-    const handleSignout = () => dispatch(signoutStart());
+    const handleSignout = () => dispatch(signOutStart());
     
     return(
         <Fragment>
